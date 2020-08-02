@@ -3,7 +3,7 @@
 == **Install:**
 
 === *First of all we need Python3 and pip3.*
-=== For Ubuntu/Debian/RaspberryPiOSi:
+=== For Ubuntu/Debian/RaspberryPiOS:
 [source,bash]
 ----
 sudo apt install python3-dev python3-pip
