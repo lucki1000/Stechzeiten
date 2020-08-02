@@ -1,3 +1,8 @@
 = **Stechzeiten**
 
+== **Goals:**
+- **connection to a ext. DB**
+- **Web Viewer**
+
+
 == *A project by Lukas Bonrath*
