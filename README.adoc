@@ -20,8 +20,8 @@ sudo pip3 install mfrc522
 
 == **Goals:**
 
-=== - **connection to a ext. DB and write files into**
-=== - **Web Viewer**
+* [x] *connection to a ext. DB and write files into* 
+* [ ] *Web Viewer* 
 
 
 == *A project by Lukas Bonrath*
