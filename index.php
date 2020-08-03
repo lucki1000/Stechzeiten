@@ -14,10 +14,12 @@ if ($conn->connect_error) {
 $sql  = 'SELECT * FROM `stechzeiten`';
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+    echo "<style>table, th, td {border: 1px solid black;}</style> <br><table><tr><th>Tag</th><th>Uhrzeit</th><th>Status</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<style>table, th, td {border: 1px solid black;}</style> <br><table><tr><th>Tag</th><th>Uhrzeit</th><th>Status</th></tr><tr><td>". $row["Datum"]. "</td><td>". $row["Uhrzeit"]. "</td><td>" . $row["Status"] . "</td></tr></table><br>";
+        echo "<tr><td>". $row["Datum"]. "</td><td>". $row["Uhrzeit"]. "</td><td>" . $row["Status"] . "</td></tr>";
     }
+    echo "</table><br>";
 } else {
     echo "0 results";
 }
