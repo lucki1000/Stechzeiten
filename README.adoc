@@ -21,7 +21,7 @@ sudo pip3 install mfrc522
 == **Goals:**
 
 * [x] *connection to database and write data into* 
-* [ ] *Web Viewer* 
+* [x] *Web Viewer* 
 
 
 == *A project by Lukas Bonrath*
