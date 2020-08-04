@@ -25,3 +25,7 @@ sudo pip3 install mfrc522
 
 
 == *A project by Lukas Bonrath*
+
+== Picture from the Webviewer:
+
+image::pictures/stechzeiten_viewer.png[300,200]
