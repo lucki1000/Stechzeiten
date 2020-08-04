@@ -28,4 +28,4 @@ sudo pip3 install mfrc522
 
 == Picture from the Webviewer:
 
-image::pictures/stechzeiten_viewer.png[300,200]
+image::pictures/stechzeiten_viewer.png[600,500]
