@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Stechzeiten Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="sorttable.js"></script>
+    <script src="jquery-3.5.1.js"></script>
+</head>
+<body>
+<h1><p class="try">Stechzeiten Viewer</p></h1><br />
+<table class="container sortable">
+    <thead>
+        <tr>
+            <th><h1>Tag</h1></th>
+            <th><h1>Uhrzeit</h1></th>
+            <th><h1>Status</h1></th>
+        </tr>
+    </thead>
+    <tbody id="timeval">
+<script>
+
+$(document).ready(function()
+{
+   //ajaxTime.php is called every second to get time from server
+   var refreshId = setInterval(function()
+   {
+     $('#timeval').load('/test/select_query.php?randval='+ Math.random());
+   }, 10000);
+});
+</script>
+</tbody>
+</table><br> 
+</body>
+</html>
