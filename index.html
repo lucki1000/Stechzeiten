@@ -24,7 +24,7 @@ $(document).ready(function()
    //ajaxTime.php is called every second to get time from server
    var refreshId = setInterval(function()
    {
-     $('#timeval').load('/test/select_query.php?randval='+ Math.random());
+     $('#timeval').load('select_query.php?randval='+ Math.random());
    }, 10000);
 });
 </script>
