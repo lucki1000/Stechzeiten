@@ -25,7 +25,7 @@ try:
     while True:
         print("Hold a tag near the reader")
         id, readed_text = reader.read() #used the read function to fill the "id" and "readed_text" variables  
-        if id == 307151134521:
+        if id == your_chip_id:
             id_new = "your-name"
         else:
             id_new = "Unknown"
