@@ -26,7 +26,7 @@ try:
         print("Hold a tag near the reader")
         id, readed_text = reader.read() #used the read function to fill the "id" and "readed_text" variables  
         if id == 307151134521:
-            id_new = "Lukas_Bonrath"
+            id_new = "your-name"
         else:
             id_new = "Unknown"
         if re.search(r'gekommen\b', readed_text): #using regex to find gekommen in readed_text
