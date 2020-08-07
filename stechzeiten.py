@@ -14,30 +14,40 @@ mydb = mysql.connector.connect( #connect to mysql
 
 cursor = mydb.cursor()
 
+def sql_exec():
+    sql = f"INSERT INTO stechzeiten (ID, Datum, Uhrzeit, Status) VALUES ('{id_new}', CURRENT_DATE(), CURRENT_TIME(), '{status}')" #sql command
+    cursor.execute(sql) #execute sql command
+    print("Written to Database")
+    mydb.commit()
+    sleep(3) #sleep 3 seconds
+
 try:
     while True:
         print("Hold a tag near the reader")
         id, readed_text = reader.read() #used the read function to fill the "id" and "readed_text" variables  
-        if re.search(r'anwesend\b', readed_text): #using regex to find anwesend in readed_text
-            print("ID: %s\nText: %s" % (id,readed_text))
-            status_abw = "abwesend" #set new state
-            reader.write(status_abw) #write new state
-            print("Written")
-            sql = """INSERT INTO stechzeiten (Datum, Uhrzeit, Status) VALUES (CURRENT_DATE(), CURRENT_TIME(), "abwesend")""" #sql command
+        if id == 307151134521:
+            id_new = "Lukas_Bonrath"
         else:
+            id_new = "Unknown"
+        if re.search(r'gekommen\b', readed_text): #using regex to find gekommen in readed_text
             print("ID: %s\nText: %s" % (id,readed_text))
-            status_anw = "anwesend" #set new state
-            reader.write(status_anw) #write new state
+            print(id_new)
+            status = "gegangen" #set new state
+            reader.write(status) #write new state
             print("Written")
-            sql = """INSERT INTO stechzeiten (Datum, Uhrzeit, Status) VALUES (CURRENT_DATE(), CURRENT_TIME(), "anwesend")""" #sql command
-
-        cursor.execute(sql) #execute sql command
-        mydb.commit()
-        sleep(3) #sleep 3 seconds
-        
+            sql_exec()
+        elif re.search(r'gegangen\b', readed_text):
+            print("ID: %s\nText: %s" % (id,readed_text))
+            print(id_new)
+            status = "gekommen" #set new state
+            reader.write(status) #write new state
+            print("Written")
+            sql_exec()
+        else:
+            print("No valid Chip, nothing wrote")
+            print(id, id_new, readed_text)
 
 except KeyboardInterrupt: #cleanup and unuse GPIOs
     GPIO.cleanup()
     mydb.close() #close the connection to mysql
     raise
-    

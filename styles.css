@@ -6,6 +6,14 @@ body {
   background-color:#1F2739;
 }
 
+div.div-input {
+  text-align: right;
+}
+
+div.div-input #text_suche p{
+  text-align: left;
+}
+
 p.try {
   color: #FFFF00;
 }
