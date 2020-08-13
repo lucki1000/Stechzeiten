@@ -1,5 +1,5 @@
 [Unit]
-Description=Lauch Bash Script to load stechzeiten.py
+Description=Lauch Bash Script to run stechzeiten.py in a tmux session
 After=systemd-user-sessions.service
 
 [Service]
