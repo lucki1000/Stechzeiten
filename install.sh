@@ -14,7 +14,7 @@ fi
 
 #install depencies from repos
 sudo apt update
-sudo apt install python3-dev python3-pip tmux -y
+sudo apt install mariadb-common mariadb-server python3-dev python3-pip tmux -y
 
 #install additional depencies with pip3
 sudo pip3 install spidev
