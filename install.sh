@@ -10,6 +10,8 @@
 if lsb_release -a | grep "Rasp"
 then
     echo "dtparam=spi=on" | sudo tee -a /boot/config.txt
+    echo "device_tree_param=spi=on" | sudo tee -a /boot/config.txt
+    echo "dtoverlay=spi-bcm2708" | sudo tee -a /boot/config.txt
 fi
 
 #install depencies from repos
@@ -19,6 +21,7 @@ sudo apt install mariadb-common mariadb-server python3-dev python3-pip tmux -y
 #install additional depencies with pip3
 sudo pip3 install spidev
 sudo pip3 install mfrc522
+sudo pip3 install mysql
 
 #create database and user
 chmod +x create_database.sh
