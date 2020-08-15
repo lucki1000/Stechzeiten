@@ -22,6 +22,7 @@ sudo apt install mariadb-common mariadb-server python3-dev python3-pip tmux -y
 sudo pip3 install spidev
 sudo pip3 install mfrc522
 sudo pip3 install mysql
+sudo pip3 install mysql-connector-python-rf
 
 #create database and user
 chmod +x create_database.sh
