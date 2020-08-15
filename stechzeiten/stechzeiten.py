@@ -47,6 +47,9 @@ try:
             print("No valid Chip, nothing wrote")
             print(id, id_new, readed_text)
 
+finally:
+    GPIO.cleanup()
+
 except KeyboardInterrupt: #cleanup and unuse GPIOs
     GPIO.cleanup()
     mydb.close() #close the connection to mysql
