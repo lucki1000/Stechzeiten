@@ -30,6 +30,9 @@ chmod +x create_database.sh
 
 #define WebRoot and copy Webviewer to webroot
 read -p "Type your webroot, common webroot from Apache2 is /var/www/html/: " webroot_path
+if [[ -z "$webroot_path" ]]; then
+   webroot_path = "/var/www/html/"
+fi
 sudo cp -r website/* $webroot_path
 
 #add a new service file to systemd and enable on startup
