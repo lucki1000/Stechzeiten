@@ -35,9 +35,8 @@ if [[ -z "$webroot_path" ]]; then
 fi
 sudo cp -r website/* $webroot_path
 
-#add a new service file to systemd and enable on startup
-sudo cp -r systemd_unit/stechzeiten.service /etc/systemd/system/
-sudo systemctl enable stechzeiten.service
+#start stechzeiten with system
+echo "sudo -H -u pi /etc/stechzeiten/stechzeiten.sh" | sudo tee /etc/rc.local
 
 #copy stechzeiten(folder) to /etc/ here are the needed files to run the python script
 sudo cp -r stechzeiten /etc/
